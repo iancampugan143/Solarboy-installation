@@ -23,51 +23,61 @@
     <a href="#projects" onclick="closeMenu()">Projects</a>
     <a href="#about" onclick="closeMenu()">About</a>
     <a href="#contact" onclick="closeMenu()">Contact</a>
-    <a href="#contact" class="cta-btn" onclick="closeMenu()">Get Quote</a>
+    <a href="#contact" class="cta-btn" onclick="closeMenu()">Get Free Quote</a>
   </nav>
 </header>
 
 
 <section id="home" class="hero">
   <div class="overlay">
-    <h1>Save Up to 50% on Your Electric Bill</h1>
-    <p>Affordable Solar Installation for Filipino Homes</p>
+    <h1>Power Your Home with Clean Solar Energy ☀️</h1>
+    <p>Professional Solar Installation for Filipino Homes & Businesses</p>
 
     <div class="hero-buttons">
-      <button onclick="scrollToSection('contact')">Get Free Quote</button>
-      <button class="secondary" onclick="scrollToSection('services')">View Services</button>
+      <button onclick="scrollToSection('contact')">Get Free Site Assessment</button>
+      <button class="secondary" onclick="scrollToSection('services')">Explore Services</button>
     </div>
 
-    <p class="badge">✔ 2-Year Warranty • ✔ Free Consultation</p>
+    <p class="badge">✔ Save Up to 50% Electricity Bill • ✔ 2-Year Warranty • ✔ Free Consultation</p>
   </div>
 </section>
 
 
 <section class="stats">
-  <div class="stat"><h2>50+</h2><p>Installations Completed</p></div>
-  <div class="stat"><h2>30-50%</h2><p>Average Savings</p></div>
-  <div class="stat"><h2>2 Years</h2><p>Warranty Included</p></div>
+  <div class="stat"><h2>50+</h2><p>Successful Solar Installations</p></div>
+  <div class="stat"><h2>30–50%</h2><p>Average Monthly Savings</p></div>
+  <div class="stat"><h2>2 Years</h2><p>Full System Warranty</p></div>
 </section>
 
 
 <section id="services">
-  <h2>Our Services</h2>
+  <h2>Our Professional Solar Services</h2>
+  <p>Complete end-to-end solar solutions for homes and small businesses</p>
 
   <div class="cards">
 
     <div class="card" onclick="openForm('Home Solar Installation')">
-      <h3>Home Solar Installation</h3>
-      <p>Complete solar system installation for your home.</p>
+      <h3>🏠 Home Solar Installation</h3>
+      <p>
+        Full solar system setup for your home.  
+        <b>Reduce electricity bills and switch to renewable energy today.</b>
+      </p>
     </div>
 
     <div class="card" onclick="openForm('Battery Backup System')">
-      <h3>Battery Backup System</h3>
-      <p>Stay powered even during brownouts.</p>
+      <h3>🔋 Battery Backup System</h3>
+      <p>
+        Never worry about brownouts again.  
+        <b>Store solar energy for night use and emergencies.</b>
+      </p>
     </div>
 
     <div class="card" onclick="openForm('Maintenance Service')">
-      <h3>Solar Maintenance</h3>
-      <p>Keep your system running at peak performance.</p>
+      <h3>🛠 Solar Maintenance</h3>
+      <p>
+        Keep your system efficient and long-lasting.  
+        <b>Cleaning, inspection, and performance optimization.</b>
+      </p>
     </div>
 
   </div>
@@ -78,16 +88,19 @@
   <h2>Why Choose SolarBoy?</h2>
 
   <div class="features">
-    <div>✔ Affordable Packages</div>
-    <div>✔ Fast Installation</div>
-    <div>✔ Trusted Installer</div>
-    <div>✔ Free Site Visit</div>
+    <div>✔ Trusted Local Solar Installer</div>
+    <div>✔ Affordable Payment Options</div>
+    <div>✔ Fast & Professional Installation</div>
+    <div>✔ Free On-Site Inspection</div>
+    <div>✔ High Quality Solar Panels</div>
+    <div>✔ After-Sales Support</div>
   </div>
 </section>
 
 
 <section id="projects">
-  <h2>Recent Installations</h2>
+  <h2>Our Recent Solar Installations</h2>
+  <p>Real projects installed for Filipino homeowners</p>
 
   <div class="gallery">
     <img src="image1.jpeg" alt="">
@@ -99,18 +112,18 @@
 
 
 <section id="about">
-  <h2>About Us</h2>
+  <h2>About SolarBoy Installation</h2>
   <p>
-    SolarBoy Installation provides affordable solar solutions for Filipino homes.
-    We help families save money and switch to clean energy.
+    SolarBoy Installation is committed to providing <b>affordable, reliable, and sustainable solar energy solutions</b>.  
+    We help Filipino families reduce electricity costs while protecting the environment through clean energy.
   </p>
 </section>
 
-<!-- CTA -->
+
 <section class="cta">
-  <h2>Start Saving Today</h2>
-  <p>Get your FREE solar estimate now</p>
-  <button onclick="scrollToSection('contact')">Request Quote</button>
+  <h2>Start Saving with Solar Today ☀️</h2>
+  <p>Get a FREE solar consultation and estimated savings report</p>
+  <button onclick="scrollToSection('contact')">Request Free Quote</button>
 </section>
 
 
@@ -118,13 +131,14 @@
   <h2>Contact Us</h2>
 
   <p>📞 09624114703</p>
-  <p>Facebook: Rodronald Castro</p>
+  <p>📘 Facebook: Rodronald Castro</p>
+  <p>📍 Free site visit available within your area</p>
 
   <form id="contactForm">
     <input type="text" id="name" placeholder="Your Name" required>
-    <input type="text" id="address" placeholder="Address" required>
+    <input type="text" id="address" placeholder="Full Address" required>
     <input type="number" id="bill" placeholder="Monthly Electric Bill (₱)">
-    <button type="submit">Get Free Quote</button>
+    <button type="submit">Get Free Solar Quote</button>
   </form>
 
   <p id="status"></p>
@@ -135,6 +149,8 @@
   <div class="popup-content">
     <span onclick="closeForm()">&times;</span>
     <h3 id="serviceTitle"></h3>
+
+    <p>Fill up form for fast quotation</p>
 
     <input type="text" id="popupName" placeholder="Full Name">
     <input type="text" id="popupAddress" placeholder="Address">
@@ -149,64 +165,48 @@ function scrollToSection(id) {
   if (el) el.scrollIntoView({ behavior: "smooth" });
 }
 
-
 function toggleMenu(){
-  const nav = document.getElementById("navMenu");
-  if (nav) nav.classList.toggle("active");
+  document.getElementById("navMenu").classList.toggle("active");
 }
 
 function closeMenu(){
-  const nav = document.getElementById("navMenu");
-  if (nav) nav.classList.remove("active");
+  document.getElementById("navMenu").classList.remove("active");
 }
 
-
 function openForm(service) {
-  const popup = document.getElementById("popupForm");
-  const title = document.getElementById("serviceTitle");
-
-  if (popup) popup.style.display = "flex";
-  if (title) title.innerText = service;
+  document.getElementById("popupForm").style.display = "flex";
+  document.getElementById("serviceTitle").innerText = "Request Quote: " + service;
 }
 
 function closeForm() {
-  const popup = document.getElementById("popupForm");
-  if (popup) popup.style.display = "none";
+  document.getElementById("popupForm").style.display = "none";
 }
 
 
-const contactForm = document.getElementById("contactForm");
-const status = document.getElementById("status");
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
 
-if (contactForm) {
-  contactForm.addEventListener("submit", function(e){
-    e.preventDefault();
+  const status = document.getElementById("status");
+  status.innerText = "Sending your request...";
+  status.style.color = "orange";
 
-    status.innerText = "Sending...";
-    status.style.color = "orange";
+  setTimeout(() => {
+    status.innerText = "✅ Your solar quote request has been sent successfully!";
+    status.style.color = "green";
+    this.reset();
+  }, 1200);
+});
 
-    setTimeout(() => {
-      status.innerText = "Message sent successfully!";
-      status.style.color = "green";
-      contactForm.reset();
-
-      setTimeout(() => status.innerText = "", 3000);
-    }, 1000);
-  });
-}
-
-
-function submitPopup() 
-{
-  const name = document.getElementById("popupName")?.value;
-  const address = document.getElementById("popupAddress")?.value;
+function submitPopup(){
+  const name = document.getElementById("popupName").value;
+  const address = document.getElementById("popupAddress").value;
 
   if(!name || !address){
-    alert("Please fill all fields");
+    alert("Please complete all fields");
     return;
   }
 
-  alert("Request sent for " + name);
+  alert("Thank you " + name + "! Solar consultant will contact you soon.");
   closeForm();
 }
 </script>
