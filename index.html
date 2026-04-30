@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SolarBoy Installation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="logoss.png" alt="logo">
+    <span>SolarBoy Installation</span>
+  </div>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <nav id="navMenu">
+    <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <a href="#projects" onclick="closeMenu()">Projects</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+    <a href="#contact" class="cta-btn" onclick="closeMenu()">Get Quote</a>
+  </nav>
+</header>
+
+
+<section id="home" class="hero">
+  <div class="overlay">
+    <h1>Save Up to 50% on Your Electric Bill</h1>
+    <p>Affordable Solar Installation for Filipino Homes</p>
+
+    <div class="hero-buttons">
+      <button onclick="scrollToSection('contact')">Get Free Quote</button>
+      <button class="secondary" onclick="scrollToSection('services')">View Services</button>
+    </div>
+
+    <p class="badge">✔ 2-Year Warranty • ✔ Free Consultation</p>
+  </div>
+</section>
+
+
+<section class="stats">
+  <div class="stat"><h2>50+</h2><p>Installations Completed</p></div>
+  <div class="stat"><h2>30-50%</h2><p>Average Savings</p></div>
+  <div class="stat"><h2>2 Years</h2><p>Warranty Included</p></div>
+</section>
+
+
+<section id="services">
+  <h2>Our Services</h2>
+
+  <div class="cards">
+
+    <div class="card" onclick="openForm('Home Solar Installation')">
+      <h3>Home Solar Installation</h3>
+      <p>Complete solar system installation for your home.</p>
+    </div>
+
+    <div class="card" onclick="openForm('Battery Backup System')">
+      <h3>Battery Backup System</h3>
+      <p>Stay powered even during brownouts.</p>
+    </div>
+
+    <div class="card" onclick="openForm('Maintenance Service')">
+      <h3>Solar Maintenance</h3>
+      <p>Keep your system running at peak performance.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="why">
+  <h2>Why Choose SolarBoy?</h2>
+
+  <div class="features">
+    <div>✔ Affordable Packages</div>
+    <div>✔ Fast Installation</div>
+    <div>✔ Trusted Installer</div>
+    <div>✔ Free Site Visit</div>
+  </div>
+</section>
+
+
+<section id="projects">
+  <h2>Recent Installations</h2>
+
+  <div class="gallery">
+    <img src="image1.jpeg" alt="">
+    <img src="image2.jpeg" alt="">
+    <img src="image3.jpeg" alt="">
+    <img src="images4.jpeg" alt="">
+  </div>
+</section>
+
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>
+    SolarBoy Installation provides affordable solar solutions for Filipino homes.
+    We help families save money and switch to clean energy.
+  </p>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Start Saving Today</h2>
+  <p>Get your FREE solar estimate now</p>
+  <button onclick="scrollToSection('contact')">Request Quote</button>
+</section>
+
+
+<section id="contact">
+  <h2>Contact Us</h2>
+
+  <p>📞 09624114703</p>
+  <p>Facebook: Rodronald Castro</p>
+
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="text" id="address" placeholder="Address" required>
+    <input type="number" id="bill" placeholder="Monthly Electric Bill (₱)">
+    <button type="submit">Get Free Quote</button>
+  </form>
+
+  <p id="status"></p>
+</section>
+
+
+<div id="popupForm" class="popup">
+  <div class="popup-content">
+    <span onclick="closeForm()">&times;</span>
+    <h3 id="serviceTitle"></h3>
+
+    <input type="text" id="popupName" placeholder="Full Name">
+    <input type="text" id="popupAddress" placeholder="Address">
+    <button onclick="submitPopup()">Submit Request</button>
+  </div>
+</div>
+
+
+<script>
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth" });
+}
+
+
+function toggleMenu(){
+  const nav = document.getElementById("navMenu");
+  if (nav) nav.classList.toggle("active");
+}
+
+function closeMenu(){
+  const nav = document.getElementById("navMenu");
+  if (nav) nav.classList.remove("active");
+}
+
+
+function openForm(service) {
+  const popup = document.getElementById("popupForm");
+  const title = document.getElementById("serviceTitle");
+
+  if (popup) popup.style.display = "flex";
+  if (title) title.innerText = service;
+}
+
+function closeForm() {
+  const popup = document.getElementById("popupForm");
+  if (popup) popup.style.display = "none";
+}
+
+
+const contactForm = document.getElementById("contactForm");
+const status = document.getElementById("status");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    status.innerText = "Sending...";
+    status.style.color = "orange";
+
+    setTimeout(() => {
+      status.innerText = "Message sent successfully!";
+      status.style.color = "green";
+      contactForm.reset();
+
+      setTimeout(() => status.innerText = "", 3000);
+    }, 1000);
+  });
+}
+
+
+function submitPopup() 
+{
+  const name = document.getElementById("popupName")?.value;
+  const address = document.getElementById("popupAddress")?.value;
+
+  if(!name || !address){
+    alert("Please fill all fields");
+    return;
+  }
+
+  alert("Request sent for " + name);
+  closeForm();
+}
+</script>
+
+</body>
+</html>
